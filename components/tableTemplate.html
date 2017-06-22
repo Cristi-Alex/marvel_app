@@ -1,0 +1,32 @@
+<div class="modal-backdrop" ng-show="vm.loading">
+        <img class="spinner" ng-src="assets/icons/spinner.svg">
+</div>
+
+<table class="table table-hover">
+    <thead>
+    <tr>
+        <th>#</th>
+        <th>Comic</th>
+    </tr>
+    </thead>
+    <tbody ng-repeat="comic in vm.data">
+        <tr  ng-click="vm.expandRow($index)">
+            <td>{{$index}}</td>
+            <td>{{comic.title}}</td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+        </tr>
+        <tr ng-show="vm.num == $index && vm.show">
+            <td></td>
+            <td>Characters: {{comic.characters}}</td>
+            <td>Creators: {{comic.creators}}</td>
+            <td>Events: {{comic.events}}</td>
+            <td>Series: {{comic.series}}</td>
+            <td>Stories: {{comic.stories}}</td>
+            <td><img ng-src={{comic.thumbnail}}></td>
+        </tr>
+
+    </tbody>
+</table>

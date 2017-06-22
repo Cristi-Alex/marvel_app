@@ -31,12 +31,7 @@
         vm.$onDestroy = destroy;
         vm.expandRow = expandRow;
 
-        //TODO complete search
-        //TODO refactor expandRow to allow multiple expansions
-        //TODO write tests!!!
-        //TODO styling (SASS if there's time left)
-        //TODO comment code :D
-        //TODO deployment
+
         function init() {
             //theoretically this could work with different services
             //another option could have been to inject the comicService directly but

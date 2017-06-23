@@ -1,0 +1,36 @@
+{
+  "name": "marvel_app",
+  "version": "1.0.0",
+  "description": "marvel comics app",
+  "main": "marvelApp.js",
+  "directories": {
+    "test": "test"
+  },
+  "dependencies": {
+    "jasmine-core": "^2.6.4",
+    "karma": "^1.7.0",
+    "karma-firefox-launcher": "^1.0.1",
+    "karma-jasmine": "^1.1.0",
+    "karma-ng-html2js-preprocessor": "^1.0.0",
+    "karma-chrome-launcher": "^2.1.1"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Cristi-Alex/marvel_app.git"
+  },
+  "keywords": [
+    "marvel",
+    "app",
+    "comic"
+  ],
+  "author": "CristiAlex",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Cristi-Alex/marvel_app/issues"
+  },
+  "homepage": "https://github.com/Cristi-Alex/marvel_app#readme"
+}

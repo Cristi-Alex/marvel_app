@@ -19,7 +19,7 @@
     //SearchController.$inject = [];
     function SearchController() {
         var vm = this;
-
+        var searchPressed= 0;
         vm.$onInit = init;
         vm.$onDestroy = destroy;
         vm.setQuery = setQuery;
@@ -27,6 +27,7 @@
 
         function init() {
             vm.srcString = "";
+            //vm.searchPressed = 0;
             vm.searchTypes = [
                 {id: "", name: 'Select type'},
                 {id: 'characters', name: 'Characters'},
@@ -36,12 +37,25 @@
         }
 
         function setQuery() {
-                vm.queryChange({event: {query : {query: vm.searchTypeModel, srcString : vm.srcString}}});
+            if(vm.query.query !== vm.searchTypeModel || vm.query.srcString !== vm.srcString) {
+                searchPressed++;
+                vm.queryChange({
+                    event: {
+                        query: {
+                            query: vm.searchTypeModel,
+                            srcString: vm.srcString,
+                            searchPressed: searchPressed
+                        }
+                    }
+                });
+            }
         }
 
         function clearQuery() {
             vm.searchTypeModel = vm.srcString = "";
-            vm.queryChange({event: {query : {query: vm.searchTypeModel, srcString : vm.srcString}}});
+            searchPressed = 0;
+            vm.queryChange({event: {query : {query: vm.searchTypeModel,
+                srcString : vm.srcString, searchPressed: searchPressed}}});
         }
 
         function destroy(){

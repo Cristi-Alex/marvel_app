@@ -24,7 +24,7 @@
     function MarvelMainCtrl() {
         var vm = this;
 
-        vm.query = {query: "", srcString: ""};
+        vm.query = {query: "", srcString: "", searchPressed: 0};
         console.log("Main...");
     }
 }());

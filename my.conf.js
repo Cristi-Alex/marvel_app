@@ -15,13 +15,15 @@ module.exports = function(config) {
 
     // list of files / patterns to load in the browser
     files: [
-        './lib/angular.js',
-        './lib/angular-mocks.js',
-        './components/tableModule.js',
-        './core/coreModule.js',
-        './core/comicService.js',
-        './components/TableComponent.js',
-        './test/spec/TableComponentSpec.js'
+        'lib/angular.js',
+        'lib/angular-mocks.js',
+
+        'components/tableModule.js',
+        'components/TableComponent.js',
+        'core/coreModule.js',
+        'core/comicService.js',
+        'test/spec/TableComponentSpec.js',
+        'components/*.html'
      //*.js',
      //test/**/*Spec.js'
     ],
@@ -35,16 +37,26 @@ module.exports = function(config) {
     // preprocess matching files before serving them to the browser
     // available preprocessors: https://npmjs.org/browse/keyword/karma-preprocessor
     preprocessors: {
+        'components/tableTemplate.html': ['ng-html2js']
     },
 
+    ngHtml2JsPreprocessor: {
+      // create a single module that contains templates from all the files
+      moduleName: 'templates'
+    },
 
     // test results reporter to use
     // possible values: 'dots', 'progress'
     // available reporters: https://npmjs.org/browse/keyword/karma-reporter
-    reporters: ['progress'],
+      reporters: ['progress', 'coverage'],
 
+    coverageReporter: {
+      type : 'html',
+      // output coverage reports
+      dir : 'coverage/'
+    },
 
-    // web server port
+      // web server port
     port: 9876,
 
 

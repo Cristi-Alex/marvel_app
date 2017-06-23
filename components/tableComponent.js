@@ -19,7 +19,7 @@
     TableController.$inject = ['$injector', 'Comic'];
     function TableController($injector, Comic) {
         var vm = this;
-        var query, srcString, comicService;
+        var query, srcString, searchPressed,  comicService;
 
         vm.show= false;
         vm.num = -1;
@@ -40,12 +40,14 @@
             comicService = $injector.get(vm.service || "comicService");
             query = vm.query.query;
             srcString = vm.query.srcString;
+            searchPressed = vm.query.searchPressed;
             var result = comicService.getComics();
             vm.data = processModel(result);
         }
 
         function doCheck() {
-            if(vm.query.query !== query && vm.query.srcString !== srcString){
+            if(vm.query.searchPressed !== searchPressed){
+               searchPressed = vm.query.searchPressed;
                query = vm.query.query;
                srcString = vm.query.srcString;
                var reload  = comicService.load(query,srcString);
@@ -53,6 +55,7 @@
                reload.then( function (response){
                    var result = comicService.getComics();
                    vm.data = processModel(result);
+                   return response;
                }).catch(function (error) {
                    reload.reject(error);
                    console.log(error);

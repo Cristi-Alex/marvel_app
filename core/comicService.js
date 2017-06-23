@@ -49,7 +49,7 @@
 
                     }).catch(function (error) {
                         console.log(error);
-                        return promis.reject(error);
+                        return $q.reject(error);
                     });
             }else{
                 promis = makeRequest(urlToGet)
@@ -58,7 +58,7 @@
                         return response;
                     }).catch(function (error) {
                         console.log(error);
-                        return promis.reject(error);
+                        return $q.reject(error);
                     });
             }
 

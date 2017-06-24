@@ -52,6 +52,49 @@ img.spinner{
 }
 
 .search{
-    position:absolute;
-    right: 0px;
+    position: absolute;
+    right: 20px;
+    top: 10px;
+}
+
+.app h2{
+    font-size: 50px;
+    background-color: black;
+    margin-top: 0px;
+    color: lightgrey;
+}
+
+.search input{
+    width: 200px;
+    display: inline-block;
+    border-radius: 5px;
+    height: 33px;
+    vertical-align: middle;
+    font-size: 14px;
+    padding: 6px 12px;
+}
+
+.search .select{
+    margin-right: 10px;
+}
+
+table{
+    table-layout:fixed;
+}
+
+thead tr th:first-child,
+tbody tr td:first-child {
+    width: 5em;
+    min-width: 5em;
+    max-width: 5em;
+}
+
+.mainRow{
+    height: 50px;
+    min-height: 50px;
+    max-height: 50px;
+}
+
+.subRow {
+    text-align: end;
 }

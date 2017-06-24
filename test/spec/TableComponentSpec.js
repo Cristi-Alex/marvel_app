@@ -1,6 +1,9 @@
 /**
  * Created by Cris on 22.06.2017.
  */
+
+//this should have been a directive testing but
+//couldn't get it to work :(
 describe('Testing TableComponent',function () {
     'use strict';
 

@@ -4,21 +4,22 @@
 
 <table class="table table-hover">
     <thead>
-    <tr>
+    <tr class="tabHeader">
         <th>#</th>
         <th>Comic</th>
     </tr>
     </thead>
     <tbody ng-repeat="comic in vm.data">
-        <tr  ng-click="vm.expandRow($index)">
+        <tr  ng-click="vm.expandRow($index)" class="mainRow">
             <td>{{$index}}</td>
             <td>{{comic.title}}</td>
             <td></td>
             <td></td>
             <td></td>
             <td></td>
+            <td></td>
         </tr>
-        <tr ng-show="vm.num == $index && vm.show">
+        <tr ng-show="vm.num == $index && vm.show" class="subRow">
             <td></td>
             <td>Characters: {{comic.characters}}</td>
             <td>Creators: {{comic.creators}}</td>
@@ -27,6 +28,5 @@
             <td>Stories: {{comic.stories}}</td>
             <td><img ng-src={{comic.thumbnail}}></td>
         </tr>
-
     </tbody>
 </table>

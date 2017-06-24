@@ -1,7 +1,7 @@
 <div>
-    <input type="text" placeholder="Search by..." id="searchInput" ng-model="vm.srcString">
+    <input type="text" placeholder="Search by..." ng-model="vm.srcString">
     <span class="spacer"></span>
-    <select name="queryCriteria" id="queryCriteria" ng-model="vm.searchTypeModel">
+    <select class="btn btn-secondary dropdown-toggle" ng-model="vm.searchTypeModel">
         <option ng-repeat="option in vm.searchTypes" value="{{option.id}}">{{option.name}}</option>
     </select>
     <button class="btn btn-primary" ng-click="vm.setQuery()">Search</button>

@@ -25,6 +25,7 @@
     "angular": "^1.6.4",
     "bootstrap": "^3.3.7",
     "express": "^4.15.3",
-    "js-md5": "md5#^0.4.2"
+    "js-md5": "md5#^0.4.2",
+    "angular-mocks": "^1.6.4"
   }
 }

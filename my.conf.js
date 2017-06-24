@@ -15,14 +15,14 @@ module.exports = function(config) {
 
     // list of files / patterns to load in the browser
     files: [
-        'lib/angular.js',
-        'lib/angular-mocks.js',
+        'bower_components/angular/angular.js',
+        'bower_components/angular-mocks/angular-mocks.js',
 
-        'components/tableModule.js',
-        'components/TableComponent.js',
+        'comic/comicModule.js',
+        'comic/ComicFactory.js',
         'core/coreModule.js',
         'core/comicService.js',
-        'test/spec/TableComponentSpec.js',
+        'test/spec/ComicFactorySpec.js',
         'components/*.html'
      //*.js',
      //test/**/*Spec.js'

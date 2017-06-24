@@ -11,7 +11,7 @@
     function comicFactory(){
 
         function Comic(model){
-            this.title = model && model.title ? model.title : "NA";
+            this.title = model && model.title ? model.title : "N/A";
             this.characters = getComicAttribute(model,"characters");
             this.creators =  getComicAttribute(model, "creators");
             this.events =  getComicAttribute(model, "events");

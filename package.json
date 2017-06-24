@@ -20,7 +20,7 @@
     "postinstall" : "./node_modules/bower/bin/bower install",
 
     "update-deps": "npm update",
-    "postupdate-deps": "bower update",
+    "postupdate-deps": "./node_modules/bower/bin/bower update",
 
     "prestart": "npm install",
     "start": "http-server -a localhost -p 8080 -c-1",

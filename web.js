@@ -7,6 +7,6 @@ app.use(express.static(__dirname + '/'));
 app.get('/', function(req, res) {
     res.sendfile('index.html', {root: __dirname })
 });
-app.listen(3000, '0.0.0.0', function(err) {
-    console.log("Started listening on %s", app.url);
+app.listen(process.env.PORT || 3000, function(){
+    console.log("Express server listening on port %d in %s mode", this.address().port, app.settings.env);
 });

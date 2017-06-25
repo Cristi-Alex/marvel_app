@@ -24,10 +24,10 @@
         vm.show= false;
         vm.num = -1;
         vm.loading = false;
+        vm.notFound = false;
 
         vm.$onInit = init;
         vm.$doCheck = doCheck;
-       // vm.$onChanges = onChanges;
         vm.$onDestroy = destroy;
         vm.expandRow = expandRow;
 
@@ -50,6 +50,7 @@
                searchPressed = vm.query.searchPressed;
                query = vm.query.query;
                srcString = vm.query.srcString;
+               vm.notFound = false;
                var reload  = comicService.load(query,srcString);
                vm.loading = true;
                reload.then( function (response){
@@ -65,11 +66,6 @@
             }
         }
 
-        function onChanges(query) {
-            var current = query.query.currentValue;
-            var previous = query.query.previousValue;
-            console.log("On changes executed!" + current+ "  "+previous);
-        }
 
         function expandRow(index){
             if(vm.num === index )
@@ -87,11 +83,15 @@
         function processModel(model) {
             var allComics = [];
 
-            model.forEach(function(cmc){
-                cmc.data.results.forEach(function (elem) {
-                    allComics.push(new Comic(elem));
+            if(model.length === 0) {
+                vm.notFound = true;
+            }else{
+                model.forEach(function(cmc){
+                    cmc.data.results.forEach(function (elem) {
+                        allComics.push(new Comic(elem));
+                    });
                 });
-            });
+            }
             return allComics;
         }
 

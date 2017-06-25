@@ -2,7 +2,11 @@
         <img class="spinner" ng-src="assets/icons/spinner.svg">
 </div>
 
-<table class="table table-hover">
+<div class="notFound" ng-show="vm.notFound">
+    <p><h1>No results found for this query!</h1></p>
+</div>
+
+<table class="table table-hover" ng-show="!vm.notFound">
     <thead>
     <tr class="tabHeader">
         <th>#</th>

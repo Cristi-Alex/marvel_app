@@ -20,7 +20,7 @@
             var hashKey = timeStamp+PRIVATE_KEY+PUBLIC_KEY;
             var hash = md5(hashKey);
             var urlToGet;
-            var ENDPOINT = 'http://gateway.marvel.com/v1/public/';
+            var ENDPOINT = 'https://gateway.marvel.com/v1/public/';
             var urlGetByType, urlGetComics;
             var promis;
             var promises=[];

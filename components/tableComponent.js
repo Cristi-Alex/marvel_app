@@ -83,7 +83,7 @@
         function processModel(model) {
             var allComics = [];
 
-            if(model.length === 0) {
+            if(model.length === 0 || model[0].data.results.length ===0) {
                 vm.notFound = true;
             }else{
                 model.forEach(function(cmc){

@@ -51,6 +51,16 @@
                         console.log(error);
                         return $q.reject(error);
                     });
+            }else if(type==="" && srcString!==""){
+                urlGetByType = ENDPOINT+'comics?titleStartsWith='+srcString+'&ts='+timeStamp+'&apikey='+PUBLIC_KEY+'&hash='+hash;
+                promis = makeRequest(urlGetByType)
+                    .then(function (response) {
+                        _comicData = [response];
+                        return response;
+                    }).catch(function (error) {
+                        console.log(error);
+                        return $q.reject(error);
+                    });
             }else{
                 promis = makeRequest(urlToGet)
                     .then(function (response) {

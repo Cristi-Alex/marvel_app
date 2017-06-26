@@ -27,7 +27,7 @@
 
         function init() {
             vm.srcString = "";
-            //vm.searchPressed = 0;
+            vm.searchTypeModel= "";
             vm.searchTypes = [
                 {id: "", name: 'Select type'},
                 {id: 'characters', name: 'Characters'},
